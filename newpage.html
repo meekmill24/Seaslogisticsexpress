@@ -1,0 +1,3114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seas Logistics Express</title>
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  />
+  
+  <!-- Progress Bar CSS -->
+  <style>
+    /* Progress Bar at Top */
+    #progressBarContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+#progressBar {
+  height: 100%;
+  width: 0;
+  background: gold;
+}
+
+  </style>
+  
+  <!-- Custom Integrated CSS -->
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      scroll-behavior: smooth;
+    }
+
+
+    .wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full height of the page */
+}
+
+.content {
+  flex: 1; /* Pushes the footer down */
+}
+ /* FOOTER - Normal Flow with Original CodingNepal Colors */
+/* Footer container */
+footer {
+  position: relative; /* normal document flow */
+  width: 100%;
+  background: #2980b9;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+ 
+}
+
+footer::before {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: #AFAFB6;
+  margin-bottom: 0; /* remove extra space */
+}
+
+footer .content {
+  max-width: 1250px;
+  margin: auto;
+  padding: 30px 40px; /* adjust as needed */
+}
+
+footer .bottom-details {
+  width: 100%;
+  background: #0F0844;
+  padding: 10px 0;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+footer .bottom-details .bottom_text {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.bottom-details .bottom_text span {
+  font-size: 14px;
+  color: #fff;
+}
+/* Ensure no extra margin on the very last element */
+body > footer {
+  margin-bottom: 0;
+}
+
+
+/* Top area (logo and social icons) */
+footer .content .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.content .top .logo-details {
+  color: #fff;
+  font-size: 30px;
+}
+.content .top .media-icons {
+  display: flex;
+}
+.content .top .media-icons a {
+  height: 40px;
+  width: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+/* Social icons hover effects */
+.top .media-icons a:nth-child(1) { background: #4267B2; }
+.top .media-icons a:nth-child(1):hover { color: #4267B2; background: #fff; }
+.top .media-icons a:nth-child(2) { background: #1DA1F2; }
+.top .media-icons a:nth-child(2):hover { color: #1DA1F2; background: #fff; }
+.top .media-icons a:nth-child(3) { background: #E1306C; }
+.top .media-icons a:nth-child(3):hover { color: #E1306C; background: #fff; }
+.top .media-icons a:nth-child(4) { background: #0077B5; }
+.top .media-icons a:nth-child(4):hover { color: #0077B5; background: #fff; }
+.top .media-icons a:nth-child(5) { background: #FF0000; }
+.top .media-icons a:nth-child(5):hover { color: #FF0000; background: #fff; }
+
+/* Link boxes */
+footer .content .link-boxes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+footer .content .link-boxes .box {
+  width: calc(100% / 5 - 10px);
+  margin-bottom: 1.5rem;
+}
+.content .link-boxes .box .link_name {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;  /* ensures underline width matches text */
+  padding-bottom: 4px;      /* space for underline */
+}
+.link-boxes .box .link_name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+}
+.content .link-boxes .box li {
+  margin: 6px 0;
+  list-style: none;
+}
+.content .link-boxes .box li a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.4s ease;
+}
+.content .link-boxes .box li a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Subscribe box: make background match footer */
+.content .link-boxes .input-box {
+  width: calc(100% / 5 - 10px);
+  background-color: #2980b9;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+.link-boxes .input-box input {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border: 2px solid #AFAFB6;
+  background: transparent;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  color: #fff;
+  margin-top: 5px;
+}
+.link-boxes .input-box input::placeholder {
+  color: #AFAFB6;
+  font-size: 16px;
+}
+.link-boxes .input-box input[type="button"] {
+  background: #fff;
+  color: #140B5C;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 4px 0;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.input-box input[type="button"]:hover {
+  opacity: 1;
+}
+
+/* Why Choose Us Section */
+/* Why Choose Us - Section Styling */
+#WhyChooseUs {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+  text-align: center;
+  border: 3px solid #2980b9; /* Border around the section */
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering everything inside */
+  justify-content: center;
+}
+
+/* Container for Content */
+.why-container {
+  max-width: 1100px; /* Matches About section width */
+  margin: auto;
+}
+
+/* Title Styling */
+.why-container h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Feature Cards Layout */
+.why-features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows responsiveness */
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%; /* Ensures it takes full space */
+  max-width: 1200px; /* Matches About section */
+}
+
+/* Feature Card */
+.feature {
+  position: relative;
+  width: 320px; /* Matches About section cards */
+  height: 380px;
+  background: linear-gradient(135deg, #2980b9, #2c3e50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Number Badge (1, 2, 3) */
+.feature::after {
+  content: attr(data-number);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  background: #ffcc00; /* DHL Yellow */
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Content Styling */
+.feature img {
+  width: 80px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.feature h3 {
+  font-size: 1.4rem;
+  color: #ffcc00; /* DHL Yellow */
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #ecf0f1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover Scale Effect */
+.feature:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Fix for Mobile */
+@media (max-width: 1024px) {
+  .why-container {
+    max-width: 95%;
+  }
+
+  .feature {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-features {
+    flex-direction: column;
+  }
+
+  #WhyChooseUs {
+    padding: 3rem 1rem;
+  }
+
+  .feature {
+    width: 100%;
+  }
+}
+
+
+
+/* Our Services Section */
+#OurServices {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.services-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.services-container h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.services-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.service {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+}
+
+.service img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.service h3 {
+  font-size: 1.2rem;
+  color: #ffcc00; /* DHL Yellow */
+  margin-bottom: 0.5rem;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #555;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  footer .content .link-boxes .box,
+  footer .content .link-boxes .input-box {
+    width: calc(100% / 2 - 10px);
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .content .top .logo-details {
+    font-size: 26px;
+  }
+  .content .top .media-icons a {
+    height: 35px;
+    width: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+  footer .content .link-boxes .box {
+    width: calc(100% / 3 - 10px);
+  }
+  footer .content .link-boxes .input-box {
+    width: 60%;
+  }
+  .bottom-details .bottom_text span,
+  .bottom-details .bottom_text a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 520px) {
+  footer::before {
+    top: 145px;
+  }
+  footer .content .top {
+    flex-direction: column;
+  }
+  .content .top .media-icons {
+    margin-top: 16px;
+  }
+  footer .content .link-boxes .box {
+    width: calc(100% / 2 - 10px);
+  }
+  footer .content .link-boxes .input-box {
+    width: 100%;
+  }
+}
+
+
+      /* Navbar */
+   /* Navbar Styling */
+/* Navbar Styling */
+nav {
+  background: #2980b9;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+}
+
+/* Navbar Brand (Logo & Text) */
+nav .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+nav .navbar-brand img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Navbar Links */
+nav .nav-link {
+  color: #fff !important;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+nav .nav-link:hover {
+  color: #ffcc00 !important; /* DHL Yellow */
+}
+
+/* Dropdown Menu */
+nav .dropdown-menu {
+  background: #2573a6; /* Darker blue */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+nav .dropdown-item {
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: background 0.3s ease-in-out;
+}
+
+nav .dropdown-item:hover {
+  background: #1e5d8b; /* Slightly darker blue */
+}
+
+/* Navbar Toggle Button */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Responsive Navbar */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    text-align: left;
+  }
+}
+
+    /* Home Section - Carousel Slider */
+    #Home {
+      
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #Home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity for darkness */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+    #heroCarousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    #heroCarousel .carousel-item {
+      height: 100%;
+    }
+    #heroCarousel .carousel-item img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+    /* Carousel Controls: subtle background for controls */
+    /* Home Carousel Navigation Buttons */
+/* Home Carousel Navigation Buttons */
+#heroCarousel .carousel-control-prev,
+#heroCarousel .carousel-control-next {
+  position: absolute;
+  top: 47.5%; /* Moved up slightly (previously 50%) */
+  transform: translateY(-50%);
+  width: 60px; /* Larger for better visibility */
+  height: 60px;
+  border-radius: 50%; /* Perfectly circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 204, 0, 0.8); /* Semi-transparent DHL Yellow */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  transition: all 0.3s ease-in-out;
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Soft border */
+}
+
+/* Adjust Button Positions */
+#heroCarousel .carousel-control-prev {
+  left: 30px; /* Keeps button in same horizontal position */
+}
+
+#heroCarousel .carousel-control-next {
+  right: 30px;
+}
+
+/* Button Icon Styling */
+#heroCarousel .carousel-control-prev-icon,
+#heroCarousel .carousel-control-next-icon {
+  width: 30px;
+  height: 30px;
+  background-image: none; /* Remove default Bootstrap background */
+  color: #fff; /* White arrow color */
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom Arrows Using Font Awesome */
+#heroCarousel .carousel-control-prev::before,
+#heroCarousel .carousel-control-next::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+#heroCarousel .carousel-control-prev::before {
+  content: '\f104'; /* Left arrow */
+}
+
+#heroCarousel .carousel-control-next::before {
+  content: '\f105'; /* Right arrow */
+}
+
+/* Hover Effect - Smooth Glow */
+#heroCarousel .carousel-control-prev:hover,
+#heroCarousel .carousel-control-next:hover {
+  background: rgba(255, 153, 0, 0.9); /* Slightly darker DHL Yellow */
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Click Effect */
+#heroCarousel .carousel-control-prev:active,
+#heroCarousel .carousel-control-next:active {
+  transform: translateY(-50%) scale(0.95);
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #heroCarousel .carousel-control-prev {
+    left: 15px; /* Moves buttons slightly inside for small screens */
+  }
+
+  #heroCarousel .carousel-control-next {
+    right: 15px;
+  }
+
+  #heroCarousel .carousel-control-prev,
+  #heroCarousel .carousel-control-next {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+    /* Hero Content */
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      padding: 1rem;
+      color: #fff;
+    }
+   /* Hero Section Header Styling */
+.hero-content h1 {
+  font-size: 3.5rem; /* Large and bold */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Elegant shadow */
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Subtitle / Dynamic Text */
+.hero-content p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.2s ease-in-out;
+  margin-top: 10px;
+}
+
+/* Button Styling */
+.hero-content .get-quote-btn {
+  margin-top: 25px; /* Adds spacing below text */
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem; /* Adjusts for smaller screens */
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+    #dynamicText {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      min-height: 3rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+    #Home button {
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 30px;
+      background-color: rgba(41, 128, 185, 0.7); /* Reduced opacity */
+  /* You may remove the separate opacity property if you only want the background to be translucent */
+
+      color: #fff;
+      font-size: 1.125rem;
+      transition: background 0.3s;
+      margin-top: 3rem; /* pushed further down */
+    }
+    #Home button:hover {
+        background-color: rgba(41, 128, 185, 0.8);
+    }
+    
+    /* Get Quote Button - Modern UI/UX */
+.get-quote-btn {
+  display: inline-block;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6a00, #ee0979); /* Red-Orange to Pink Gradient */
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 5px 15px rgba(238, 9, 121, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px; /* Moves the button slightly down */
+}
+
+/* Glowing Effect */
+.get-quote-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease-out;
+}
+
+/* Hover Effect - Glow & Scale */
+.get-quote-btn:hover {
+  background: linear-gradient(135deg, #ee0979, #ff6a00); /* Reverse Gradient */
+  transform: scale(1.07);
+  box-shadow: 0px 8px 20px rgba(238, 9, 121, 0.4);
+}
+
+/* Click Effect - Ripple Animation */
+.get-quote-btn:active::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .get-quote-btn {
+    padding: 14px 28px;
+    font-size: 16px;
+    margin-top: 15px; /* Adjusts for mobile */
+  }
+}
+
+
+
+    /* About Section - Cards */
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+   /* General About Section Styling */
+/* General About Section Styling */
+/* About Section */
+#About {
+  padding: 80px 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+/* Cards Layout */
+.card-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Increased spacing between cards */
+  flex-wrap: wrap;
+  padding: 0 40px; /* Adds spacing from left and right edges */
+}
+
+/* Card Item */
+.card-item {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 350px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Hover Effect */
+.card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Images */
+.card-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px; /* ⬅️ Added more spacing below the image */
+}
+
+/* Card Text */
+.card-item h3 {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+/* Labels for Each Type */
+.developer, .designer, .editor {
+  display: inline-block;
+  padding: 6px 15px;
+  font-size: 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Different Colors for Each Label */
+.developer { background: #ff6b6b; color: #fff; } /* Red */
+.designer { background: #4dabf7; color: #fff; } /* Blue */
+.editor { background: #ffcc00; color: #333; } /* Yellow */
+
+
+/* Modal Popup */
+/* Modal Popup */
+/* Modal Popup */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Enlarged Modal Content */
+.modal-content {
+  background: #fff;
+  padding: 30px; /* Increased padding */
+  width: 60%; /* Increased width */
+  max-width: 700px; /* More space for content */
+  border-radius: 12px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Bigger Modal Image */
+.modal-img {
+  width: 100%;
+  height: 280px; /* Increased height */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Modal Title */
+.modal-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Modal Description */
+.modal-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+/* Animation for Smooth Popup */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive - Adjust for Mobile Screens */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 85%; /* Adjusted width for smaller screens */
+    max-width: 90%;
+  }
+
+  .modal-img {
+    height: 200px; /* Adjusted image size for mobile */
+  }
+
+  .modal-content h2 {
+    font-size: 22px;
+  }
+
+  .modal-content p {
+    font-size: 15px;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .card-item {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card-item {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+    /* Quote Section - Between About and Category */
+   /* Quote Section Styling */
+/* Quote Section Styling */
+/* Updated Quote Section Styling */
+/* Get a Quote Section */
+#Quote {
+  position: relative;
+  padding: 80px 0;
+  background:url("28.jpg")  no-repeat center center/cover;
+  text-align: center;
+  color: #fff;
+}
+
+/* Form Container */
+.quote-container {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+}
+
+/* Overlay Effect */
+.quote-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+
+/* Form Styling */
+.quote-form {
+  position: relative;
+  z-index: 2;
+}
+
+/* Title */
+h2.text-center {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-label {
+  font-weight: bold;
+  color: #fff;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Autofill Input Fix */
+mapbox-address-autofill input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Placeholder */
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Row Layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Ensure Inputs are the same height */
+.col-md-6,
+.col-md-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Get Quote Button */
+.btn-quote {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-quote:hover {
+  background: linear-gradient(135deg, #ee0979, #ff6a00);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 14px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
+  .quote-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .quote-container {
+    padding: 30px;
+  }
+
+  .form-control {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn-quote {
+    font-size: 16px;
+  }
+}
+
+
+    /* Category Section */
+   /* Category Section */
+#Category {
+  padding-top: 7rem;
+  background: url("32.jpg") no-repeat center center/cover; /* Main background */
+  background-size: cover;
+  color: white;
+  position: relative;
+  margin-bottom: 0;
+  margin-top: 2rem;
+  padding-bottom: 4rem;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 5rem 1rem;
+}
+
+
+/* Centered Overlay for Category Section */
+#Category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Content Box */
+#Category .content {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 5rem 0;
+  background: rgba(0, 0, 0, 0.6); /* Darker overlay for text readability */
+  border-radius: 12px;
+  position: relative;
+  z-index: 3;
+}
+
+
+
+/* Title */
+#Category .content h1 {
+  font-size: 42px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Subtitle */
+#Category .content p {
+  font-size: 20px;
+  margin: 1rem 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Button */
+#Category .content .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  margin-top: 1.5rem;
+}
+
+#Category .content .btn:hover {
+  background: linear-gradient(135deg, #ee0979, #ff6a00);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 14px rgba(255, 255, 255, 0.3);
+}
+
+/* Stats Section with Background Image */
+/* Outer Stats Container: Full width with negative margins */
+/* Stats Section with Background Image */
+#Category .stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 2rem;
+  background: url("55.jpg") no-repeat center center/cover; /* Background Image */
+  background-size: cover;
+  border-radius: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Dark Overlay for Better Readability */
+#Category .stats::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  border-radius: 15px;
+  z-index: 1;
+}
+
+/* Grid Layout for Stats */
+#Category .stats-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 25px;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Stat Cards */
+#Category .stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 160px;
+  width: 320px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 400ms;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+  backdrop-filter: blur(10px); /* Smooth Blur effect */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 15px;
+}
+
+/* Individual Stat Colors */
+#Category .stat-item.red { background-color: rgba(244, 63, 94, 0.9); } /* Red */
+#Category .stat-item.blue { background-color: rgba(59, 130, 246, 0.9); } /* Blue */
+#Category .stat-item.green { background-color: rgba(34, 197, 94, 0.9); } /* Green */
+#Category .stat-item.yellow { background-color: rgba(255, 193, 7, 0.9); } /* Yellow */
+
+/* Hover Effects */
+#Category .stat-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.4);
+}
+
+/* Blur Effect for Non-Hovered Cards */
+#Category .stats-inner:hover > .stat-item:not(:hover) {
+  filter: blur(5px);
+  transform: scale(0.95);
+}
+
+/* Bigger Number Text */
+#Category .stat-item h2 {
+  font-size: 34px; /* Bigger and bolder */
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Description Text (Bigger & More Visible) */
+#Category .stat-item p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.5px;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #Category .stats-inner {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  #Category .stat-item {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+
+    
+    /* Initial hidden state */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When section is visible */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    /* Track Shipment Section - pushed further down */
+    #Feedback {
+      position: relative;
+  padding: 4rem 2rem;
+  background: url("18.jfif") no-repeat center center/cover;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    } 
+
+    .feedback-overlay {
+      position: absolute;
+  width: 65%; /* Slightly wider */
+  max-width: 700px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.34); /* Tiny bit darker */
+  border-radius: 18px;
+  filter: blur(6px); /* Slightly stronger blur */
+}
+
+
+    
+#Feedback form input[type="text"],
+#Feedback form input[type="email"],
+#Feedback form textarea {
+  width: 100%;
+  max-width: 500px; /* Adjust width */
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Arial', sans-serif;
+  background: white;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+#Feedback form input:focus,
+#Feedback form textarea:focus {
+  border-color: #ff9900; /* Slightly darker yellow */
+  box-shadow: 0px 0px 8px rgba(255, 204, 0, 0.5);
+}
+
+    .input-box {
+      position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.15); /* Slight transparency */
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25); /* Slightly stronger shadow */
+  text-align: center;
+  color: white;
+    }
+    .input-box p {
+      font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+    }
+    .input-box input {
+      width: 100%;
+  padding: 12px;
+  border: 2px solid #ffcc00; /* DHL Yellow */
+  border-radius: 8px;
+  font-size: 16px;
+  background: white;
+  color: black;
+  margin-bottom: 1rem;
+    }
+    .input-box .button {
+      background-color: #ffcc00;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+    }
+    .input-box .button:hover {
+      background-color: #ff9900;
+    }
+
+    #Feedback form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Space between form elements */
+}
+
+    
+    /* Redesigned Contact Section */
+  /* Contact Section - Upgraded Background */
+#ContactSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Deep ocean gradient */
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle Animated Background Overlay */
+#ContactSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.1), transparent);
+  animation: backgroundGlow 5s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+/* Background Glow Animation */
+@keyframes backgroundGlow {
+  from {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+/* Contact Container */
+.contact-container {
+  width: 85%;
+  max-width: 1000px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Left Side: Contact Info */
+.contact-info {
+  max-width: 350px;
+  text-align: left;
+  padding: 20px;
+}
+
+/* Elegant Animated Heading */
+.contact-info h2 {
+  font-size: 2.5rem;
+  color: #ffcc00; /* DHL Yellow */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInSlide 1.2s ease-in-out;
+  position: relative;
+}
+
+/* Elegant Underline Effect */
+.contact-info h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ffcc00;
+  margin-top: 10px;
+  animation: underlineSlide 1.2s ease-in-out;
+}
+
+/* Contact Section Title */
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInDown 1s ease-in-out forwards;
+}
+
+/* Decorative Line Under Title */
+.contact-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #ffcc00; /* DHL Yellow */
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Contact Subtitle */
+.contact-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInUp 1s ease-in-out forwards;
+  animation-delay: 0.3s; /* Delays animation for smoother transition */
+}
+
+/* Fade-in Down Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Contact Info Text */
+.contact-info p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Right Side: Contact Form */
+.contact-form {
+  flex: 1;
+}
+
+/* Form Styling */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Message Box */
+.message-box {
+  height: 120px;
+}
+
+/* Send Button */
+.send-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.send-btn:hover {
+  background: linear-gradient(135deg, #ee0979, #ff6a00);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 14px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .contact-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Stacks layout on smaller screens */
+    padding: 30px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-control {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+    /* Footer Inspired by Code Nepal */
+    footer {
+      background: #2980b9;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer .social-icons a {
+      color: #fff;
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    footer .social-icons a:hover {
+      color: #f1c40f;
+    }
+    
+    /* Testimonials Carousel */
+   /* Testimonials Section */
+#Testimonials {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Ensures cards align properly */
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 5rem 2rem; /* Increased padding to space out the section */
+  background: #f8f9fa;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+#Testimonials:hover {
+  transform: translateY(-3px); /* Reduced movement to prevent excessive shift */
+}
+
+/* Section Title */
+#Testimonials h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Testimonial Cards */
+.testimonial-item {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px; /* Fixed height to avoid cut-off issues */
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Testimonial Card Hover Effect */
+.testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Image */
+.testimonial-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #ffcc00; /* DHL yellow */
+  object-fit: cover;
+  display: block; /* Ensures it behaves like a block element */
+  margin: 0 auto 15px auto; /* Centers the image horizontally */
+}
+
+/* Name */
+.testimonial-item h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Role */
+.testimonial-item p.text-muted {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  color: #777;
+}
+
+/* Quote & Testimonial Text */
+.testimonial-text {
+  font-size: 16px;
+  font-style: italic;
+  color: #555;
+  flex-grow: 1;
+  margin-bottom: 15px; /* Space before stars */
+  padding: 0 15px;
+}
+
+/* Quote Icon */
+.testimonial-text i {
+  color: #ffcc00;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+/* Star Ratings */
+.testimonial-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-item ul li {
+  color: #f1c40f;
+  font-size: 1.2rem;
+  margin: 0 2px;
+}
+
+/* Carousel Fix: Prevent Bottom Cut-off */
+#testimonialCarousel {
+  padding-bottom: 40px; /* Ensures proper spacing */
+}
+
+/* Testimonial Navigation Buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  #Testimonials {
+    padding-bottom: 80px;
+  }
+
+  .testimonial-item {
+    max-width: 100%;
+    min-height: auto;
+    padding: 2rem;
+  }
+}
+
+/* More Info Button Styling */
+.more-info-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  top: -20px; /* Moves button up */
+}
+
+.more-info-btn:hover {
+  background: linear-gradient(135deg, #ee0979, #ff6a00);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 14px rgba(255, 255, 255, 0.3);
+}
+
+
+/* Modal Popup Container */
+/* Modal Background */
+/* Modal Background */
+.modal1 {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Modal Content - Ensures Full Text is Visible */
+.modal1-content {
+  background: #fff;
+  padding: 30px;
+  width: 60%;
+  max-width: 700px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+  color: black;
+  max-height: 80vh; /* Prevent content cut-off */
+  overflow-y: auto; /* Enables scrolling if content is too long */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Modal Image */
+.modal1-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Heading */
+.modal1-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #222; /* Darker black */
+}
+
+/* Paragraph Text */
+.modal1-content p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding: 0 15px;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+.modal-text {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .modal1-content {
+    width: 85%;
+    padding: 20px;
+  }
+  .modal1-img {
+    height: auto;
+  }
+}
+
+
+    /* Scroll-to-Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2980b9;
+      color: #fff;
+      padding: 0.5rem 0.75rem;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      z-index: 1000;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .scroll-top:hover {
+      background: #2573a6;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      #Home h1 {
+        font-size: 2.5rem;
+      }
+      #dynamicText {
+        font-size: 1.75rem;
+      }
+      .card-list {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+  <style>
+    /* General Section Styling */
+section {
+  padding: 4rem 1rem; /* increased padding for focus */
+  margin-bottom: 2rem; /* uniform spacing between sections */
+}
+
+/* About Section */
+#About {
+  
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Quote Section */
+#Quote {
+  margin-bottom: 0;
+  padding-bottom: 6rem;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Category Section */
+
+#Category .content {
+  background: rgba(0, 0, 0, 0.6); /* dark overlay for text clarity */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Track Shipment Section */
+#Feedback {
+  background: url("33.jpg") ;
+  background-size: cover;
+  padding: 3rem 1rem; /* a bit more padding */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  border-radius: 20px; /* Smooth rounded corners */
+  padding: 4rem 1rem;
+  margin-top: 3rem; /* Space above */
+ 
+ 
+}
+
+#Feedback form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Space between form elements */
+}
+#Feedback::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0), #f8f9fa);
+}
+
+
+
+/* Contact Section */
+#Contact {
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  background: #f8f9fa;
+  border-radius: 20px;
+}
+
+#Contact input,
+#Contact textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+#Contact input:focus,
+#Contact textarea:focus {
+  border-color: #ffcc00; /* DHL yellow */
+  box-shadow: 0px 0px 8px rgba(255, 204, 0, 0.5);
+}
+
+.btn-contact {
+  background-color: #ffcc00;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 8px;
+}
+
+.btn-contact:hover {
+  background-color: #ff9900;
+}
+
+
+
+/* Testimonials Section */
+#Testimonials {
+  background: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+#Testimonials:hover{
+transform: translateY(-5px);
+}
+
+/* Center Carousel Navigation Buttons Higher */
+#testimonialCarousel .carousel-control-prev,
+#testimonialCarousel .carousel-control-next {
+  position: absolute;
+  top: 45%; /* Moves buttons slightly higher */
+  transform: translateY(-50%);
+  width: 50px; /* Bigger buttons */
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 204, 0, 0.9); /* DHL Yellow */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Adjust Button Positions */
+#testimonialCarousel .carousel-control-prev {
+  left: -50px; /* Adjust horizontal position */
+}
+
+#testimonialCarousel .carousel-control-next {
+  right: -50px;
+}
+
+/* Button Icon Styling */
+#testimonialCarousel .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  background-image: none; /* Remove default Bootstrap background */
+  color: #000;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom Arrows Using Font Awesome */
+#testimonialCarousel .carousel-control-prev::before,
+#testimonialCarousel .carousel-control-next::before {
+  content: '\f104'; /* Left arrow */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #000;
+  font-size: 1.5rem;
+}
+
+#testimonialCarousel .carousel-control-next::before {
+  content: '\f105'; /* Right arrow */
+}
+
+/* Hover Effect - Slight Zoom & Darker Shade */
+#testimonialCarousel .carousel-control-prev:hover,
+#testimonialCarousel .carousel-control-next:hover {
+  background-color: #e6b800; /* Darker yellow */
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #testimonialCarousel .carousel-control-prev {
+    left: -30px; /* Moves buttons closer on small screens */
+  }
+
+  #testimonialCarousel .carousel-control-next {
+    right: -30px;
+  }
+
+  #testimonialCarousel .carousel-control-prev,
+  #testimonialCarousel .carousel-control-next {
+    top: 50%; /* Readjusts position for mobile */
+  }
+}
+
+.section-divider {
+  width: 100%;
+  height: 70px; /* Adjust height if needed */
+  background: transparent;
+  margin-top: -50px;
+}
+
+  </style>
+
+
+</head>
+<body>
+  <!-- Progress Bar -->
+  <div id="progressBarContainer">
+    <div id="progressBar"></div>
+  </div>
+  
+  <div class="wrapper">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top  shadow">
+    <div class="container">
+      <a class="navbar-brand" href="#Home">
+        <img src="2.jpeg" alt="Logo" width="50" height="50" class="me-2" /> 
+        Seas Logistics Express
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+  
+          <!-- Track Shipment Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="trackDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Track Shipment
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="trackDropdown">
+              <li><a class="dropdown-item" href="#Feedback">Track Now</a></li>
+            </ul>
+          </li>
+  
+          <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+  
+          <!-- Quote Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="quoteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Quote
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="quoteDropdown">
+              <li><a class="dropdown-item" href="#Quote">Get Quote</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  <!-- Hero Section with Carousel Slider -->
+  <section id="Home">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
+      
+      <!-- Carousel Indicators (Now for 5 Slides) -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+  
+      <!-- Carousel Inner (All 5 Slides Are Now Inside) -->
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="20.jpg" class="d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="21.jpg" class="d-block w-100" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="25.jpg" class="d-block w-100" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img src="44.jpg" class="d-block w-100" alt="Slide 4">
+        </div>
+        <div class="carousel-item">
+          <img src="43.jpg" class="d-block w-100" alt="Slide 5">
+        </div>
+      </div>
+  
+      <!-- Previous & Next Buttons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      
+    </div>
+  
+    <!-- Hero Content -->
+    <div class="hero-content text-center">
+      <h1>Welcome to Seas Logistics Express</h1>
+      <p id="dynamicText">Fast. Secure. Reliable.</p>
+      <button class="get-quote-btn" onclick="location.href='#Quote'">Get Quote Now</button>
+    </div>
+  </section>
+  
+  
+  <!-- About Section -->
+  <section id="About">
+    <div class="card-list">
+      <!-- By Land -->
+      <a class="card-item" onclick="openModal('land')">
+        <img src="9.jpeg" alt="By Land" />
+        <span class="developer">By Land</span>
+        <h3>Reliable land transport solutions.</h3>
+      </a>
+  
+      <!-- By Sea -->
+      <a class="card-item" onclick="openModal('sea')">
+        <img src="7.jpeg" alt="By Sea" />
+        <span class="designer">By Sea</span>
+        <h3>Efficient sea freight services.</h3>
+      </a>
+  
+      <!-- By Air -->
+      <a class="card-item" onclick="openModal('air')">
+        <img src="8.jpeg" alt="By Air" />
+        <span class="editor">By Air</span>
+        <h3>Fast air cargo solutions.</h3>
+      </a>
+    </div>
+  </section>
+  
+  <!-- Popup Modal (Hidden by Default) -->
+<div id="serviceModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Shipping Image" class="modal-img">
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+  
+  
+  <!-- Quote Section (Between About and Category) -->
+ <!-- Quote Section (Updated) -->
+<!-- Quote Section (Updated with Mapbox Autofill) -->
+<!-- Quote Section (Updated with Mapbox Autofill) -->
+<section id="Quote">
+  <div class="quote-container">
+    <div class="quote-overlay"></div>
+    <div class="quote-form">
+      <h2 class="text-center mb-4">Get a Quote</h2>
+      <form id="quoteForm">
+        <div class="row mb-3">
+          <!-- From Location -->
+          <div class="col-md-6">
+            <label for="fromLocation" class="form-label">From Location</label>
+            <mapbox-address-autofill access-token="pk.eyJ1IjoibWVla21pbGwyNDciLCJhIjoiY203OHkycWliMDB6dTJpcXhybDQwYzg1bCJ9.-se3UQNteFuzhjmSdFssPw">
+              <input type="text" class="form-control" id="fromLocation" placeholder="Enter pickup location" required />
+            </mapbox-address-autofill>
+            <input type="hidden" id="fromStreet" name="fromStreet" />
+            <input type="hidden" id="fromCity" name="fromCity" />
+            <input type="hidden" id="fromState" name="fromState" />
+            <input type="hidden" id="fromCountry" name="fromCountry" />
+          </div>
+
+          <!-- To Location -->
+          <div class="col-md-6">
+            <label for="toLocation" class="form-label">To Location</label>
+            <mapbox-address-autofill access-token="pk.eyJ1IjoibWVla21pbGwyNDciLCJhIjoiY203OHkycWliMDB6dTJpcXhybDQwYzg1bCJ9.-se3UQNteFuzhjmSdFssPw">
+              <input type="text" class="form-control" id="toLocation" placeholder="Enter destination" required />
+            </mapbox-address-autofill>
+            <input type="hidden" id="toStreet" name="toStreet" />
+            <input type="hidden" id="toCity" name="toCity" />
+            <input type="hidden" id="toState" name="toState" />
+            <input type="hidden" id="toCountry" name="toCountry" />
+          </div>
+        </div>
+
+        <!-- Package Details -->
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <label for="weight" class="form-label">Weight (kg)</label>
+            <input type="number" class="form-control" id="weight" placeholder="Weight" />
+          </div>
+          <div class="col-md-3">
+            <label for="length" class="form-label">Length (cm)</label>
+            <input type="number" class="form-control" id="length" placeholder="Length" />
+          </div>
+          <div class="col-md-3">
+            <label for="width" class="form-label">Width (cm)</label>
+            <input type="number" class="form-control" id="width" placeholder="Width" />
+          </div>
+          <div class="col-md-3">
+            <label for="height" class="form-label">Height (cm)</label>
+            <input type="number" class="form-control" id="height" placeholder="Height" />
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-quote">Get Quote</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+  
+  <!-- Category Section -->
+  <div class="section-divider"></div>
+  
+  <section id="Category">
+    <div class="content">
+      <h1>Let's See Our Progress</h1>
+      <p>
+        Charting Our Course: Taking Stock of Our Journey, Embracing Growth, and
+        Paving the Way Forward. Let’s Pause, Reflect, and Renew Our Commitment to
+        Progress.
+      </p>
+<!-- "More Info" Button -->
+<a class="btn more-info-btn" onclick="openCompanyInfoModal()">More Info ⟶</a>
+
+<!-- Modal Popup for Company Achievements -->
+<div id="companyInfoModal" class="modal1">
+  <div class="modal1-content">
+    <span class="close-btn" onclick="closeCompanyInfoModal()">&times;</span>
+    <img src="59.webp" alt="Company Achievement" class="modal1-img">
+    <h2>Our Journey & Achievements</h2>
+    <div class="modal-text">
+      <p>Founded over 20 years ago, our company has grown from a small local business into a global logistics leader.</p>
+      <p>We are proud of our legacy and excited for the future.</p>
+    </div>
+    
+  </div>
+</div>
+
+
+
+     
+<div class="stats-inner">
+  <div class="stat-item red">
+    <p class="tip">323K</p>
+    <p class="second-text">Delivered Items</p>
+  </div>
+  <div class="stat-item blue">
+    <p class="tip">210K</p>
+    <p class="second-text">Reviews</p>
+  </div>
+  <div class="stat-item green">
+    <p class="tip">1247</p>
+    <p class="second-text">Happy Clients</p>
+  </div>
+  <div class="stat-item yellow">
+    <p class="tip">64127</p>
+    <p class="second-text">Total Stores</p>
+  </div>
+</div>
+
+      
+    </div>
+  </section>
+  
+  <!-- Track Shipment Section (pushed further down) -->
+  <section id="Feedback">
+    <div class="feedback-overlay"></div> <!-- Background Overlay -->
+    <div class="container">
+      <div class="input-box">
+        <p><strong>TRACK YOUR SHIPMENT</strong></p>
+        <input type="text" placeholder="Enter Tracking Number(s)" required />
+        <button class="button" type="submit">Track</button>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="WhyChooseUs">
+    <div class="why-container">
+      <h2>Why Choose Us?</h2>
+      <p>We provide the most reliable and efficient shipping services, ensuring your packages reach their destination safely and on time.</p>
+      
+      <div class="why-features">
+        <div class="feature">
+          <img src="36.webp" alt="Fast Delivery">
+          <h3>Fast & Reliable Delivery</h3>
+          <p>With advanced tracking and an efficient network, we ensure your shipments arrive on time.</p>
+        </div>
+  
+        <div class="feature">
+          <img src="37.webp" alt="Secure Packaging">
+          <h3>Secure Packaging</h3>
+          <p>Your items are handled with care, using the best packaging for safety.</p>
+        </div>
+  
+        <div class="feature">
+          <img src="38.webp" alt="24/7 Support">
+          <h3>24/7 Customer Support</h3>
+          <p>We’re always available to assist with any inquiries or issues.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Testimonials Carousel Section -->
+  <section id="Testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Carousel Item 1 -->
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-lg-4">
+                <div class="testimonial-item">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="Avatar" />
+                  <h5>Anna Deynah</h5>
+                  <p class="text-muted">UX Designer</p>
+                  <p class="testimonial-text">
+                    <i class="fas fa-quote-left me-2"></i>Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+                  </p>
+                  <ul>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4 d-none d-lg-block">
+                <div class="testimonial-item">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="Avatar" />
+                  <h5>John Doe</h5>
+                  <p class="text-muted">Web Developer</p>
+                  <p class="testimonial-text">
+                    <i class="fas fa-quote-left me-2"></i>Ut enim ad minima veniam, quis nostrum exercitationem
+                    ullam corporis suscipit laboriosam, nisi ut aliquid commodi.
+                  </p>
+                  <ul>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star-half-alt"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4 d-none d-lg-block">
+                <div class="testimonial-item">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" alt="Avatar" />
+                  <h5>Maria Kate</h5>
+                  <p class="text-muted">Photographer</p>
+                  <p class="testimonial-text">
+                    <i class="fas fa-quote-left me-2"></i>At vero eos et accusamus et iusto odio dignissimos
+                    ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+                  </p>
+                  <ul>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="far fa-star"></i></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel Item 2 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-4">
+                <div class="testimonial-item">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(3).webp" alt="Avatar" />
+                  <h5>John Doe</h5>
+                  <p class="text-muted">UX Designer</p>
+                  <p class="testimonial-text">
+                    <i class="fas fa-quote-left me-2"></i>Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+                  </p>
+                  <ul>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4 d-none d-lg-block">
+                <div class="testimonial-item">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp" alt="Avatar" />
+                  <h5>Alex Rey</h5>
+                  <p class="text-muted">Web Developer</p>
+                  <p class="testimonial-text">
+                    <i class="fas fa-quote-left me-2"></i>Ut enim ad minima veniam, quis nostrum
+                    exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi.
+                  </p>
+                  <ul>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star-half-alt"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4 d-none d-lg-block">
+                <div class="testimonial-item">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(5).webp" alt="Avatar" />
+                  <h5>Maria Kate</h5>
+                  <p class="text-muted">Photographer</p>
+                  <p class="testimonial-text">
+                    <i class="fas fa-quote-left me-2"></i>At vero eos et accusamus et iusto odio
+                    dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+                  </p>
+                  <ul>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="far fa-star"></i></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel Item 3 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-4">
+                <div class="testimonial-item">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(6).webp" alt="Avatar" />
+                  <h5>Anna Deynah</h5>
+                  <p class="text-muted">UX Designer</p>
+                  <p class="testimonial-text">
+                    <i class="fas fa-quote-left me-2"></i>Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+                  </p>
+                  <ul>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4 d-none d-lg-block">
+                <div class="testimonial-item">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(8).webp" alt="Avatar" />
+                  <h5>John Doe</h5>
+                  <p class="text-muted">Web Developer</p>
+                  <p class="testimonial-text">
+                    <i class="fas fa-quote-left me-2"></i>Ut enim ad minima veniam, quis nostrum
+                    exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi.
+                  </p>
+                  <ul>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star-half-alt"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-4 d-none d-lg-block">
+                <div class="testimonial-item">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(7).webp" alt="Avatar" />
+                  <h5>Maria Kate</h5>
+                  <p class="text-muted">Photographer</p>
+                  <p class="testimonial-text">
+                    <i class="fas fa-quote-left me-2"></i>At vero eos et accusamus et iusto odio
+                    dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+                  </p>
+                  <ul>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="far fa-star"></i></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Redesigned Contact Section -->
+ <!-- Contact Section -->
+<!-- Contact Section -->
+<section id="ContactSection">
+  <div class="contact-container">
+    <h2 class="contact-title">Get in Touch</h2>
+    <p class="contact-subtitle">We’d love to hear from you! Send us a message.</p>
+
+    <form id="ContactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" class="form-control" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" class="form-control" placeholder="Enter subject" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" class="form-control message-box" rows="4" placeholder="Your message" required></textarea>
+      </div>
+
+      <button type="submit" class="send-btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+  
+  
+  <!-- Scroll-to-Top Button -->
+  <a href="#Home" class="scroll-top"><i class="fas fa-arrow-up"></i></a>
+  
+  <!-- Bootstrap Bundle JS (with Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  
+  <!-- Initialize the hero carousel -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var heroCarousel = document.getElementById("heroCarousel");
+      new bootstrap.Carousel(heroCarousel, {
+        interval: 3000,
+        ride: "carousel",
+        pause: false,
+      });
+    });
+  </script>
+  
+  <!-- Scroll Progress Bar Script -->
+  <script>
+    window.addEventListener('scroll', function() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+  </script>
+  
+  
+  <!-- Dynamic Typing Text Effect -->
+  <script>
+    const dynamicText = document.getElementById("dynamicText");
+    const words = [
+      "A leading logistics company",
+      "Fast and reliable shipping",
+      "Your trusted logistics partner",
+    ];
+    let wordIndex = 0,
+      charIndex = 0,
+      isDeleting = false;
+    
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+      let displayText = currentWord.substring(0, charIndex);
+      dynamicText.textContent = displayText;
+      
+      if (!isDeleting && charIndex < currentWord.length) {
+        charIndex++;
+        setTimeout(typeEffect, 150);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, 100);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) {
+          wordIndex = (wordIndex + 1) % words.length;
+        }
+        setTimeout(typeEffect, 1200);
+      }
+    }
+    typeEffect();
+  </script>
+
+<script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0/web.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function handleAddressRetrieve(event, prefix) {
+      console.log("Address Retrieved Event:", event.detail); // Debugging: Log Mapbox response
+
+      if (event.detail && event.detail.features && event.detail.features.length > 0) {
+        let feature = event.detail.features[0];
+        let context = feature.context || [];
+
+        let street = feature.text || "";
+        let city = context.find(c => c.id.includes("place"))?.text || "";
+        let state = context.find(c => c.id.includes("region"))?.text || "";
+        let country = context.find(c => c.id.includes("country"))?.text || "";
+
+        // Log extracted values for debugging
+        console.log(`${prefix}Street:`, street);
+        console.log(`${prefix}City:`, city);
+        console.log(`${prefix}State:`, state);
+        console.log(`${prefix}Country:`, country);
+
+        // Set values in input fields
+        document.getElementById(prefix + "Location").value = feature.place_name || "";
+        document.getElementById(prefix + "Street").value = street;
+        document.getElementById(prefix + "City").value = city;
+        document.getElementById(prefix + "State").value = state;
+        document.getElementById(prefix + "Country").value = country;
+      }
+    }
+
+    // Attach event listeners to both "From" and "To" fields
+    document.querySelector("mapbox-address-autofill input[id='fromLocation']")
+      .addEventListener("retrieve", function (event) {
+        handleAddressRetrieve(event, "from");
+      });
+
+    document.querySelector("mapbox-address-autofill input[id='toLocation']")
+      .addEventListener("retrieve", function (event) {
+        handleAddressRetrieve(event, "to");
+      });
+  });
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+
+    function revealSections() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight - 100) {
+          section.classList.add("show");
+        }
+      });
+    }
+
+    // Apply "hidden" class to all sections initially
+    sections.forEach((section) => section.classList.add("hidden"));
+
+    // Run function on scroll
+    window.addEventListener("scroll", revealSections);
+
+    // Initial check in case sections are already in view
+    revealSections();
+  });
+</script>
+
+<script>
+  // Function to Open Modal with Content
+// Function to Open Modal with Content & Image
+function openModal(type) {
+  let title, text, imgSrc;
+
+  if (type === "land") {
+    title = "Shipping By Land";
+    text = "Our ground transportation service ensures fast and secure delivery, using a well-established road network. Whether it's local deliveries or cross-border freight, we guarantee timely shipments.";
+    imgSrc = "49.jpg"; // Replace with actual image
+  } else if (type === "sea") {
+    title = "Shipping By Sea";
+    text = "Sea freight is the backbone of global trade, transporting large shipments across continents. Our sea logistics provide cost-effective and efficient solutions for businesses looking to move bulk cargo.";
+    imgSrc = "52.jpg"; // Replace with actual image
+  } else if (type === "air") {
+    title = "Shipping By Air";
+    text = "For urgent and high-priority shipments, air freight is the fastest option. We ensure secure handling, customs clearance, and quick transit times for international deliveries.";
+    imgSrc = "47.jpg"; // Replace with actual image
+  }
+
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalText").innerText = text;
+  document.getElementById("modalImage").src = imgSrc;
+  document.getElementById("serviceModal").style.display = "flex";
+}
+
+// Function to Close Modal
+function closeModal() {
+  document.getElementById("serviceModal").style.display = "none";
+}
+
+// Close Modal on Outside Click
+window.onclick = function(event) {
+  let modal = document.getElementById("serviceModal");
+  if (event.target === modal) {
+    closeModal();
+  }
+};
+
+</script>
+
+<script>
+// Function to Open Modal (Triggered on Button Click)
+function openCompanyInfoModal() {
+  document.getElementById("companyInfoModal").style.display = "flex";
+}
+
+// Function to Close Modal (Triggered on Close Button or Outside Click)
+function closeCompanyInfoModal() {
+  document.getElementById("companyInfoModal").style.display = "none";
+}
+
+// Close Modal When Clicking Outside
+window.onclick = function(event) {
+  var modal = document.getElementById("companyInfoModal");
+  if (event.target === modal) {
+    closeCompanyInfoModal();
+  }
+};
+
+
+</script>
+
+ </div> 
+
+ <section id="OurServices">
+  <div class="services-container">
+    <h2>Our Services</h2>
+    <p>We offer a range of logistics solutions tailored to meet your needs, ensuring efficient and timely delivery.</p>
+    
+    <div class="services-list">
+      <div class="service">
+        <img src="42.webp" alt="Worldwide Shipping">
+        <h3>Worldwide Shipping</h3>
+        <p>Reliable and cost-effective international shipping to over 200 countries.</p>
+      </div>
+
+      <div class="service">
+        <img src="41.webp" alt="Express Delivery">
+        <h3>Express Delivery</h3>
+        <p>Same-day or next-day delivery with guaranteed fast processing.</p>
+      </div>
+
+      <div class="service">
+        <img src="39.webp" alt="Warehousing Solutions">
+        <h3>Warehousing Solutions</h3>
+        <p>Secure storage and inventory management for businesses of all sizes.</p>
+      </div>
+
+      <div class="service">
+        <img src="40.webp" alt="Customs Clearance">
+        <h3>Customs Clearance</h3>
+        <p>We handle all customs procedures to ensure hassle-free imports and exports.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <i class="fab fa-slack"></i>
+          <span class="logo_name">CodingLab</span>
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Company</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Get started</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Services</li>
+          <li><a href="#">App design</a></li>
+          <li><a href="#">Web design</a></li>
+          <li><a href="#">Logo design</a></li>
+          <li><a href="#">Banner design</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Account</li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">My account</a></li>
+          <li><a href="#">Preferences</a></li>
+          <li><a href="#">Purchase</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Courses</li>
+          <li><a href="#">HTML &amp; CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Photography</a></li>
+          <li><a href="#">Photoshop</a></li>
+        </ul>
+        <ul class="box input-box">
+          <li class="link_name">Subscribe</li>
+          <li><input type="text" placeholder="Enter your email"></li>
+          <li><input type="button" value="Subscribe"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">
+          Copyright © 2023 <a href="#">CodingLab.</a> All rights reserved
+        </span>
+        <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms &amp; condition</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+  
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/67c79a2d2b7abb190cf1c623/1ilhr4hch';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+  
+</body>
+</html>
