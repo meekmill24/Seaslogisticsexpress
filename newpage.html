@@ -380,53 +380,80 @@ footer .content .link-boxes .box {
 
 /* Our Services Section */
 #OurServices {
-  padding: 4rem 2rem;
-  background: #f8f9fa;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
   text-align: center;
 }
 
 .services-container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
 }
 
 .services-container h2 {
-  font-size: 2rem;
-  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a2b4c;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.services-container > p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
 }
 
 .services-list {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+  justify-content: center;
 }
 
 .service {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
+  background: #ffffff;
+  padding: 2.5rem 1.5rem;
+  border-radius: 16px;
   text-align: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 250px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid transparent;
 }
 
-.service img {
-  width: 60px;
-  margin-bottom: 10px;
+.service:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid #ffcc00;
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #2980b9;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.service:hover .service-icon {
+  color: #ffcc00;
+  transform: scale(1.1);
 }
 
 .service h3 {
-  font-size: 1.2rem;
-  color: #ffcc00; /* DHL Yellow */
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #1a2b4c;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .service p {
-  font-size: 1rem;
-  color: #555;
+  font-size: 0.95rem;
+  color: #777;
+  line-height: 1.6;
 }
 
 
@@ -2322,19 +2349,19 @@ transform: translateY(-5px);
       <!-- Carousel Inner (All 5 Slides Are Now Inside) -->
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="3000">
-          <img src="20.jpg" class="d-block w-100" alt="Slide 1">
+          <img src="slide_ship_1775207286768.jpg" class="d-block w-100" alt="Slide 1">
         </div>
         <div class="carousel-item" data-bs-interval="3000">
-          <img src="21.jpg" class="d-block w-100" alt="Slide 2">
+          <img src="slide_truck_1775207309143.jpg" class="d-block w-100" alt="Slide 2">
         </div>
         <div class="carousel-item">
-          <img src="25.jpg" class="d-block w-100" alt="Slide 3">
+          <img src="slide_plane_1775207331188.jpg" class="d-block w-100" alt="Slide 3">
         </div>
         <div class="carousel-item">
-          <img src="44.jpg" class="d-block w-100" alt="Slide 4">
+          <img src="slide_warehouse_1775207348110.jpg" class="d-block w-100" alt="Slide 4">
         </div>
         <div class="carousel-item">
-          <img src="43.jpg" class="d-block w-100" alt="Slide 5">
+          <img src="slide_delivery_1775207365024.jpg" class="d-block w-100" alt="Slide 5">
         </div>
       </div>
   
@@ -2365,21 +2392,21 @@ transform: translateY(-5px);
     <div class="card-list">
       <!-- By Land -->
       <a class="card-item" onclick="openModal('land')">
-        <img src="9.jpeg" alt="By Land" />
+        <img src="transport_land_1775207381575.jpg" alt="By Land" />
         <span class="developer">By Land</span>
         <h3>Reliable land transport solutions.</h3>
       </a>
   
       <!-- By Sea -->
       <a class="card-item" onclick="openModal('sea')">
-        <img src="7.jpeg" alt="By Sea" />
+        <img src="slide_ship_1775207286768.jpg" alt="By Sea" />
         <span class="designer">By Sea</span>
         <h3>Efficient sea freight services.</h3>
       </a>
   
       <!-- By Air -->
       <a class="card-item" onclick="openModal('air')">
-        <img src="8.jpeg" alt="By Air" />
+        <img src="transport_air_1775207407902.jpg" alt="By Air" />
         <span class="editor">By Air</span>
         <h3>Fast air cargo solutions.</h3>
       </a>
@@ -2412,7 +2439,7 @@ transform: translateY(-5px);
           <!-- From Location -->
           <div class="col-md-6">
             <label for="fromLocation" class="form-label">From Location</label>
-            <mapbox-address-autofill access-token="pk.eyJ1IjoibWVla21pbGwyNDciLCJhIjoiY203OHkycWliMDB6dTJpcXhybDQwYzg1bCJ9.-se3UQNteFuzhjmSdFssPw">
+            <mapbox-address-autofill access-token="[YOUR_MAPBOX_TOKEN]">
               <input type="text" class="form-control" id="fromLocation" placeholder="Enter pickup location" required />
             </mapbox-address-autofill>
             <input type="hidden" id="fromStreet" name="fromStreet" />
@@ -2424,7 +2451,7 @@ transform: translateY(-5px);
           <!-- To Location -->
           <div class="col-md-6">
             <label for="toLocation" class="form-label">To Location</label>
-            <mapbox-address-autofill access-token="pk.eyJ1IjoibWVla21pbGwyNDciLCJhIjoiY203OHkycWliMDB6dTJpcXhybDQwYzg1bCJ9.-se3UQNteFuzhjmSdFssPw">
+            <mapbox-address-autofill access-token="[YOUR_MAPBOX_TOKEN]">
               <input type="text" class="form-control" id="toLocation" placeholder="Enter destination" required />
             </mapbox-address-autofill>
             <input type="hidden" id="toStreet" name="toStreet" />
@@ -2482,7 +2509,7 @@ transform: translateY(-5px);
 <div id="companyInfoModal" class="modal1">
   <div class="modal1-content">
     <span class="close-btn" onclick="closeCompanyInfoModal()">&times;</span>
-    <img src="59.webp" alt="Company Achievement" class="modal1-img">
+    <img src="company_achieve_1775207428621.jpg" alt="Company Achievement" class="modal1-img">
     <h2>Our Journey & Achievements</h2>
     <div class="modal-text">
       <p>Founded over 20 years ago, our company has grown from a small local business into a global logistics leader.</p>
@@ -2538,19 +2565,19 @@ transform: translateY(-5px);
       
       <div class="why-features">
         <div class="feature">
-          <img src="36.webp" alt="Fast Delivery">
+          <img src="icon_fast_1775207440189.jpg" alt="Fast Delivery">
           <h3>Fast & Reliable Delivery</h3>
           <p>With advanced tracking and an efficient network, we ensure your shipments arrive on time.</p>
         </div>
   
         <div class="feature">
-          <img src="37.webp" alt="Secure Packaging">
+          <img src="icon_secure_1775207455471.jpg" alt="Secure Packaging">
           <h3>Secure Packaging</h3>
           <p>Your items are handled with care, using the best packaging for safety.</p>
         </div>
   
         <div class="feature">
-          <img src="38.webp" alt="24/7 Support">
+          <img src="icon_support_1775207469441.jpg" alt="24/7 Support">
           <h3>24/7 Customer Support</h3>
           <p>We’re always available to assist with any inquiries or issues.</p>
         </div>
@@ -3004,25 +3031,25 @@ window.onclick = function(event) {
     
     <div class="services-list">
       <div class="service">
-        <img src="42.webp" alt="Worldwide Shipping">
+        <i class="fas fa-globe-americas service-icon"></i>
         <h3>Worldwide Shipping</h3>
         <p>Reliable and cost-effective international shipping to over 200 countries.</p>
       </div>
 
       <div class="service">
-        <img src="41.webp" alt="Express Delivery">
+        <i class="fas fa-shipping-fast service-icon"></i>
         <h3>Express Delivery</h3>
         <p>Same-day or next-day delivery with guaranteed fast processing.</p>
       </div>
 
       <div class="service">
-        <img src="39.webp" alt="Warehousing Solutions">
+        <i class="fas fa-warehouse service-icon"></i>
         <h3>Warehousing Solutions</h3>
         <p>Secure storage and inventory management for businesses of all sizes.</p>
       </div>
 
       <div class="service">
-        <img src="40.webp" alt="Customs Clearance">
+        <i class="fas fa-file-signature service-icon"></i>
         <h3>Customs Clearance</h3>
         <p>We handle all customs procedures to ensure hassle-free imports and exports.</p>
       </div>
